@@ -59,7 +59,7 @@ class ScheduleHandler:
 
     response = chat_completion.choices[0].message.content
 
-    print(response)
+    # print(response)
 
     with open('schedule.txt', 'w') as file:
       file.write(response)
