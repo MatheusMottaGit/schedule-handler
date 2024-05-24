@@ -1,2 +1,5 @@
 .env
 /dev_env
+__pycache__
+*.pdf
+*.txt
