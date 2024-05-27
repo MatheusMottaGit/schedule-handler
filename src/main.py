@@ -1,5 +1,5 @@
 from handlers.schedule_handler import ScheduleHandler
 
-handler = ScheduleHandler('files/file.pdf')
+handler = ScheduleHandler('utils/file.pdf')
 
-handler.generate_schedule()
+handler.handle_pdf_content()
