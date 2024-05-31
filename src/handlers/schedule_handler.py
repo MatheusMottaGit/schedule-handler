@@ -52,7 +52,7 @@ class ScheduleHandler:
     schedule_template = """
       Escala do mês da comunidade São José {nome do mês que esta no conteúdo do arquivo} (utilize CAPS LOCK)
 
-      - {nome do dia do mês} ({horário da missa}) 
+      - {dia do mês}, {nome do dia do da semana} ({horário da missa}) 
         - Nome 1
         - Nome 2
         ... 
@@ -65,6 +65,10 @@ class ScheduleHandler:
     chat_prompt = [
       {"role": "user", "content": f"Primeiro de tudo, formate esse conteúdo: { file_content }"},
       {"role": "user", "content": f"Depois, você deve separar TODOS os dias de missa da comunidade São José, apenas, que se encaixam nessas datas: { required_mass_dates }"},
+      {"role": "user", "content": "Em seguida, com base nesses dias, você deve se comportar como o coordenador da comunidade, e montar uma escala com os servidores para os dias de missa."},
+      {"role": "user", "content": f"Nessa escala, você deve seguir esse modelo: { schedule_template }, com os seguintes nomes { names }, colocando 5 nomes por dia."},
+      {"role": "user", "content": "Priorize o seguinte: O Matheus, o João e a Laura, devem estar aos sábados, e o Wilton às quartas. Os demais podem ser mais distribuídos, mas tente não repetir a mesma pessoa em datas seguidas."},
+      {"role": "user", "content": "E não deixe faltar nomes."},
     ]
 
     return chat_prompt
