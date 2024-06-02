@@ -20,15 +20,14 @@ class ScheduleHandler:
 
       extracted = page.extract_text()
       
-      content = content + extracted + "\n"
+      content = content + extracted
 
-    # print(content)
     return content
   
   def handle_month_dates(self):
     today = datetime.today()
 
-    current_month = today.month + 1 # testing as june
+    current_month = today.month
 
     current_year = today.year
 
@@ -46,34 +45,25 @@ class ScheduleHandler:
     
     return selected_days
 
-  def set_prompt(self):
-    names = ['Matheus', 'Wilton', 'João', 'Caio', 'Rillary', 'Cadu', 'Diana', 'Ana Laura', 'Emanuelly', 'Carlos Henrique', 'Lourdes', 'Valentina', 'Nichollas', 'Laura']
-
-    schedule_template = """
-      Escala do mês da comunidade São José {nome do mês que esta no conteúdo do arquivo} (utilize CAPS LOCK)
-
-      - {dia do mês}, {nome do dia do da semana} ({horário da missa}) 
-        - Nome 1
-        - Nome 2
-        ... 
-    """
-
+  def handle_prompt(self):
     file_content = self.handle_pdf_content()
 
-    required_mass_dates = self.handle_month_dates()
+    required_dates = self.handle_month_dates()
+
+    generating_rules = open('utils/rules.txt', 'r').read()
+
+    exmpl = open('utils/resource.txt', 'r').read()
 
     chat_prompt = [
       {"role": "user", "content": f"Primeiro de tudo, formate esse conteúdo: { file_content }"},
-      {"role": "user", "content": f"Depois, você deve separar TODOS os dias de missa da comunidade São José, apenas, que se encaixam nessas datas: { required_mass_dates }"},
-      {"role": "user", "content": "Em seguida, com base nesses dias, você deve se comportar como o coordenador da comunidade, e montar uma escala com os servidores para os dias de missa."},
-      {"role": "user", "content": f"Nessa escala, você deve seguir esse modelo: { schedule_template }, com os seguintes nomes { names }, colocando 5 nomes por dia."},
-      {"role": "user", "content": "Priorize o seguinte: O Matheus, o João e a Laura, devem estar aos sábados, e o Wilton às quartas. Os demais podem ser mais distribuídos, mas tente não repetir a mesma pessoa em datas seguidas."},
-      {"role": "user", "content": "E não deixe faltar nomes."},
+      {"role": "user", "content": f"Depois, você deve separar TODOS os dias de missa da comunidade São José, apenas, que se encaixam nessas datas: { required_dates }"},
+      {"role": "user", "content": f"Agora se baseie nessas regras para a confecção da escala: { generating_rules }."},
+      {"role": "user", "content": f"Como exemplo, você pode se basear nesse modelo que você já fez em testes anteriores: { exmpl }."},
     ]
 
     return chat_prompt
 
-  def on_generate_schedule(self):
+  def handle_schedule_generating(self):
     openai = OpenAI(
       api_key=os.environ.get('OPENAI_API_KEY')
     )

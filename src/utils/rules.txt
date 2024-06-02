@@ -1,0 +1,20 @@
+ - Em seguida, com base nesses dias, você deve se comportar como o coordenador da comunidade, e montar uma escala com os servidores para os dias de missa;
+ 
+ - Nessa escala, você deve seguir esse modelo: 
+    Escala do mês da comunidade São José {nome do mês que esta no conteúdo do arquivo} (utilize CAPS LOCK)
+
+      - {dia do mês}, {nome do dia do da semana} ({horário da missa}) 
+        - Nome 1
+        - Nome 2
+        ... , 
+  com os seguintes nomes: ['Matheus', 'Wilton', 'João', 'Caio', 'Rillary', 'Cadu', 'Diana', 'Ana Laura', 'Emanuelly', 'Carlos Henrique', 'Lourdes', 'Valentina', 'Nichollas', 'Laura']; colocando 5 nomes por dia;
+
+ - Priorize o seguinte: 
+    - O Matheus, o João e a Laura, sempre aos sábados, e o Wilton às quartas; 
+    - Os demais podem ser mais distribuídos, mas tente não repetir a mesma pessoa em datas consecutivas;
+ 
+ - Não é necessário colocar Wilton e Matheus no mesmo dia.
+
+ - Matheus, João, Caio e Rillary não precisam estar no mesmo dia;
+ 
+ - Não deixe faltar nomes na distribuição, e seja inclusivo.
