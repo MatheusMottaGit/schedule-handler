@@ -4,10 +4,10 @@ import { useCompletion } from "@ai-sdk/react";
 import { ChangeEvent, useState } from "react";
 import { LoaderCircle, WandSparkles } from "lucide-react";
 import ClipboardButton from "../components/clipboard-button";
-import FileLabel from "../components/file-label";
 import Textarea from "../components/textarea";
 import Button from "../components/button";
 import axios from "axios";
+import ChooseFile from "../components/choose-file";
 
 interface UploadAPIResponse {
   content: string
@@ -55,7 +55,7 @@ function App() {
     }
   }
 
-  const { handleSubmit, completion, isLoading, input, handleInputChange } = useCompletion({
+  const { handleSubmit, completion, isLoading, input, handleInputChange, } = useCompletion({
     api: "/api/completion",
     body: {
       prompt: handlePrompt(fileContent)
@@ -69,7 +69,7 @@ function App() {
     <div className="relative min-h-screen px-5 bg-zinc-900 flex items-center gap-4 justify-center font-inter">
       <div className="absolute inset-0 bg-dot-pattern bg-dot-pattern-size text-zinc-800"></div>
 
-      <main className="relative bg-zinc-900 shadow-md rounded-md border w-2/4 border-zinc-700 p-4 space-y-3">
+      <main className="relative bg-zinc-900 shadow-md rounded-md border w-3/4 border-zinc-700 p-4 space-y-3">
         <div className="flex justify-between items-center">
           <div className="flex flex-col">
             <h1 className="font-semibold text-white text-xl">
@@ -85,10 +85,11 @@ function App() {
         </div>
 
         <div className="flex flex-col gap-3">
-          <Textarea 
-            placeholder="Anything to add?"
-            value={input}
+          <Textarea
+            placeholder="Anything more to add?"
+            allowed
             onChange={handleInputChange}
+            value={input}
           />
 
           <Textarea
@@ -100,17 +101,11 @@ function App() {
 
           <form onSubmit={handleSubmit}>
             <div className="h-16 grid grid-cols-2 gap-3">
-              <FileLabel 
+              <ChooseFile 
                 file={file}
                 isUploading={isUploading}
                 uploadProgress={uploadProgress}
-              />
-
-              <input
-                type="file"
-                id="pdf_file"
-                className="sr-only"
-                onChange={onSelectFile}
+                onSelectFile={onSelectFile}
               />
 
               <Button type="submit" disabled={isLoading}>
