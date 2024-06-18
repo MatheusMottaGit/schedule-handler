@@ -97,6 +97,7 @@ function App() {
             allowed={false}
             readOnly
             value={completion}
+            id="completion"
           />
 
           <form onSubmit={handleSubmit}>
