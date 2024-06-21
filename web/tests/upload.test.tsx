@@ -1,7 +1,7 @@
-import ChooseFile from "../src/components/choose-file"
+// import ChooseFile from "../src/components/choose-file"
 
 describe('Upload file component', () => {
-  it('should work file upload correctly', () => {
+  it('should upload file correctly', () => {
     
   })
 })

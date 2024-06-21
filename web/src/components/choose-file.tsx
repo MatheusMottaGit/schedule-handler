@@ -15,12 +15,12 @@ function ChooseFile({ file, isUploading, uploadProgress, onSelectFile }: ChooseF
     <>
       <label
         htmlFor="pdf_file"
-        className="relative border border-zinc-500 rounded-md aspect-auto h-full bg-zinc-800/20 text-white  cursor-pointer border-dashed flex gap-2 items-center justify-center hover:bg-zinc-800/80"
+        className="relative border border-slate-500 rounded-md aspect-auto h-full bg-slate-800/20 text-white  cursor-pointer border-dashed flex gap-2 items-center justify-center hover:bg-slate-800/80"
       >
         {file ? (
           isUploading || uploadProgress < 100 ? (
             <div className="flex flex-col gap-2">
-              <p className="text-sm text-center text-zinc-400 font-medium">
+              <p className="text-sm text-center text-slate-400 font-medium">
                 {file.name.substring(0, 30).concat("...")}
               </p>
 

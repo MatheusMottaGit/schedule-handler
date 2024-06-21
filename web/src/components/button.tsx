@@ -11,8 +11,8 @@ function Button({variant, ...props}: ButtonProps) {
       {...props}
       className={
         twMerge(
-          "bg-violet-700/70 rounded p-2 hover:bg-violet-700/80 text-white flex items-center justify-center gap-1 cursor-pointer",
-          variant === "secondary" && "bg-transparent border border-zinc-700 hover:bg-zinc-800"
+          "bg-slate-50 rounded p-2 hover:bg-slate-50/90 font-medium flex items-center justify-center gap-1 cursor-pointer",
+          variant === "secondary" && "bg-transparent border border-slate-700 hover:bg-slate-800"
         )
       }
     />

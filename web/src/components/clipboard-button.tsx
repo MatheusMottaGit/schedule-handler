@@ -11,14 +11,14 @@ function ClipboardButton({ completion }: ClipboardButtonProps) {
     await navigator.clipboard.writeText(completion)
 
     toast.success("Copied to clipboard!", {
-      className: 'bg-zinc-900 border-zinc-700 text-zinc-300'
+      className: 'bg-slate-900 border-slate-700 text-slate-300'
     })
   }
 
   return (
     <div className="size-8">
-      <Button variant="secondary" onClick={copyToClipboard}>
-        <Clipboard className="size-4 opacity-80" />
+      <Button onClick={copyToClipboard}>
+        <Clipboard className="size-4" />
       </Button>
 
       <Toaster />
