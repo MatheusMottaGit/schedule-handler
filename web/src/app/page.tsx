@@ -78,7 +78,7 @@ function App() {
     <div className="relative min-h-screen px-5 bg-slate-950 flex items-center gap-4 justify-center font-inter">
       <div className="absolute inset-0 bg-dot-pattern bg-dot-pattern-size text-slate-900"></div>
 
-      <main className="relative bg-slate-950 shadow-md rounded-md border w-3/4 border-slate-800 p-4 space-y-3">
+      <main className="relative bg-slate-950 shadow-md rounded-md border w-5/6 border-slate-800 p-4 space-y-3">
         <div className="flex justify-between items-center">
           <div className="flex flex-col">
             <h1 className="font-semibold text-slate-200 text-xl">

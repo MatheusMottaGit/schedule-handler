@@ -14,7 +14,7 @@ export default {
         'dot-pattern': 'radial-gradient(currentColor 1px, transparent 1px)',
       },
       backgroundSize: {
-        'dot-pattern-size': '8px 8px', // Ajuste o tamanho do padrão de dots conforme necessário
+        'dot-pattern-size': '10px 10px', // Ajuste o tamanho do padrão de dots conforme necessário
       },
     },
   },
