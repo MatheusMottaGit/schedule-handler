@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* width */
+.textarea-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.textarea-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+.textarea-scrollbar::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+.textarea-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+

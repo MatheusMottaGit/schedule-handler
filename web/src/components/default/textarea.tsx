@@ -10,7 +10,7 @@ function Textarea({allowed, ...props}: TextareaProps) {
     <textarea 
       {...props}
       className={twMerge(
-        "border col-span-2 h-52 border-slate-700 resize-none rounded p-2 text-sm bg-transparent placeholder:text-slate-500 text-slate-500",
+        "textarea-scrollbar border col-span-2 h-80 flex-1 border-zinc-700 resize-none bg-zinc-950 rounded-lg p-2 text-sm placeholder:text-zinc-500 text-zinc-500",
         allowed === false && "cursor-not-allowed"
       )}
     />
