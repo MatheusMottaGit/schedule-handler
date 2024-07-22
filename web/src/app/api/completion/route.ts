@@ -16,11 +16,8 @@ export async function POST(request: Request) {
 
   const data = new StreamData()
 
-  data.append('started...')
-
   const stream = result.toAIStream({
     onFinal() {
-      data.append('completeted!')
       data.close()
     },
   })

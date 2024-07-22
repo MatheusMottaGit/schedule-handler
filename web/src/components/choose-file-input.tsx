@@ -3,28 +3,28 @@ import { CheckCircle, CloudUpload } from "lucide-react";
 
 interface ChooseFileInputProps {
   file: File | null;
-  isUploading: boolean;
+  isPending: boolean;
   uploadProgress: number;
   onSelectFile?: ChangeEventHandler<HTMLInputElement>
 }
 
-function ChooseFileInput({ file, isUploading, uploadProgress, onSelectFile }: ChooseFileInputProps) {
+function ChooseFileInput({ file, isPending, uploadProgress, onSelectFile }: ChooseFileInputProps) {
   return (
     <>
       <label
         htmlFor="pdf_file"
-        className="relative border border-zinc-500 rounded-lg aspect-auto h-full bg-zinc-950 text-white  cursor-pointer border-dashed flex gap-2 items-center justify-center hover:bg-zinc-900/80"
+        className="relative border border-slate-700 rounded-lg aspect-auto h-full bg-slate-950 text-white cursor-pointer border-dashed flex gap-2 items-center justify-center hover:bg-slate-900/80"
       >
         {file ? (
-          isUploading || uploadProgress < 100 ? (
+          isPending || uploadProgress < 100 ? (
             <div className="flex flex-col gap-2">
-              <p className="text-sm text-center text-zinc-400 font-medium">
+              <p className="text-sm text-center text-slate-400 font-medium">
                 {file.name.substring(0, 30).concat("...")}
               </p>
 
-              <div className="bg-zinc-800 w-full overflow-hidden h-3 rounded-full">
+              <div className="bg-slate-800 w-full overflow-hidden h-3 rounded-full">
                 <div 
-                  className="h-full bg-zinc-200 w-24" 
+                  className="h-full bg-slate-200 w-24" 
                   style={{
                     width: `${uploadProgress}%`
                   }}

@@ -25,7 +25,8 @@ function SaveScheduleButton({ completion }: SaveScheduleButtonProps) {
   }
 
   return (
-    <Button size="small" skin="secondary" onClick={saveScheduleOnLocalStorage}>
+    <Button size="small" onClick={saveScheduleOnLocalStorage}>
+      <span> Save </span>{" "}
       <Save className="size-4" />
     </Button>
   );

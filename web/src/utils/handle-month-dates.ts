@@ -7,8 +7,10 @@ export function handleMonthDates() {
 
   const monthNumberOfDays = dayjs(currentMonth).daysInMonth()
 
-  let selectedDates = []
-  
+  let selectedDates = [] as number[]
+  let wednesdayDates = [] as number[]
+  let saturdayDates = [] as number[]
+
   for (let day = 1; day <= monthNumberOfDays; day++) {
     const date = new Date(currentYear, currentMonth, day)
 
@@ -16,8 +18,20 @@ export function handleMonthDates() {
 
     if(weekDay === 3 || weekDay === 6) {
       selectedDates.push(day)
+
+      if(weekDay === 3) {
+        wednesdayDates.push(day)
+      }
+
+      if(weekDay === 6) {
+        saturdayDates.push(day)
+      }
     }
   }
 
-  return selectedDates
+  return {
+    monthDates: selectedDates,
+    wednesdayDates,
+    saturdayDates
+  }
 }

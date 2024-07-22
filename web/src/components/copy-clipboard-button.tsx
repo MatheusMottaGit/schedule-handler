@@ -13,7 +13,8 @@ function CopyClipboardButton({ completion }: CopyClipboardButtonProps) {
   }
 
   return (
-    <Button skin="secondary" size="small" onClick={copyToClipboard}>
+    <Button size="small" onClick={copyToClipboard}>
+      <span> Copy to clipboard </span>{" "}
       <Clipboard className="size-4" />
     </Button>
   )
